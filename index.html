@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="一个用于基础计算的在线计算机（编程参考了LS-88Hi III及AR-7778的机制）"/>
+    <meta property="og:image" content="images/calculator.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+
+    <title>Wen Hao's Calculator</title>
+
+    <!-- Icon -->
+    <link rel="icon" href="images/calculatorFavicon.ico">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/259559a4a0.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header id="https://wenhao1223.github.io/personalSite/index.html">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+          <a href="https://wenhao1223.github.io/personalSite/index.html#" class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" height="49px" viewBox="27 13 185 50">
+              <g>
+                <text x="27" y="50" font-family="Cousine" font-weight="700" font-style="normal" font-size="32.0" fill="#333" id="s-Paragraph_1-d1224">
+                  <tspan font-family="Cousine" font-weight="700" font-style="normal" font-size="32.0" fill="#333" dy="0" x="27">wɘnHao</tspan>
+                </text>
+              </g>
+              <g>
+                <defs>
+                  <path id="s-Path_1-d1224" d="M30 55 C30 55 66 61.2 86 61.2 C106 61.2 141 55 141 55 "></path>
+                </defs>
+                <g>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Path_1-d1224" fill="none" stroke-width="2" stroke="#404040" stroke-linecap="square" filter="none"></use>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a href="https://wenhao1223.github.io/personalSite/index.html#" class="nav-link" id="navI1">主页</a></li>
+              <li class="nav-item"><a href="https://wenhao1223.github.io/personalSite/index.html#interest" class="nav-link" id="navI2">兴趣|课业</a></li>
+              <li class="nav-item"><a href="https://wenhao1223.github.io/personalSite/index.html#slider" class="nav-link" id="navI3">快看！</a></li>
+              <li class="nav-item"><a href="https://wenhao1223.github.io/personalSite/project.html" class="nav-link active"  id="navI4" style="color: #fff !important; background-color: #000;">我的项目</a></li>
+              <li class="nav-item"><a href="https://wenhao1223.github.io/personalSite/index.html#contact" class="nav-link" id="navI5">联系</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row main">
+      <div class="col-lg-8 col-md-12">
+        <div class="content" id="calculatorBody">
+          <div id="display"></div>
+          <div id="memory">M</div>
+          <div id="addMinus">-</div>
+          <div id="error">E</div>
+          <div id="displayOn">88888888</div>
+          <div class="description" id="versionT">Wen Hao's Calculator Version 1.0   <i id="icon" class="fas fa-question-circle"></i></div>
+          <div class="buttonList">
+            <div class="row">
+              <button type="button" id="on" class="col col-lg-2 start" name="on">On | C</button>
+              <button type="button" id="cl" class="col col-lg-2 start" name="cl">Cl</button>
+              <button type="button" id="rm" class="col col-lg-2 function" name="rm">RM | CM</button>
+              <button type="button" id="mAdd" class="col col-lg-2 function" name="mAdd">M+</button>
+              <button type="button" id="mSub" class="col col-lg-2 function" name="mSub">M-</button>
+            </div>
+            <div class="row">
+              <button type="button" id="7" class="col col-lg-2 number" name="7">7</button>
+              <button type="button" id="8" class="col col-lg-2 number" name="8">8</button>
+              <button type="button" id="9" class="col col-lg-2 number" name="9">9</button>
+              <button type="button" id="percent" class="col col-lg-2 function" name="percent">%±</button>
+              <button type="button" id="sqrt" class="col col-lg-2 function" name="sqrt">√</button>
+            </div>
+            <div class="row">
+              <button type="button"  id="4" class="col col-lg-2 number" name="4">4</button>
+              <button type="button"  id="5" class="col col-lg-2 number" name="5">5</button>
+              <button type="button"  id="6" class="col col-lg-2 number" name="6">6</button>
+              <button type="button"  id="times" class="col col-lg-2 function" name="times">×</button>
+              <button type="button"  id="divide" class="col col-lg-2 function" name="divide">÷</button>
+            </div>
+            <div class="row">
+              <button type="button" id="1" class="col col-lg-2 number" name="1">1</button>
+              <button type="button" id="2" class="col col-lg-2 number" name="2">2</button>
+              <button type="button" id="3" class="col col-lg-2 number" name="3">3</button>
+              <button type="button" id="add" class="col col-lg-2 add function" name="add">+</button>
+              <button type="button" id="sub" class="col col-lg-2 function" name="sub">-</button>
+            </div>
+            <div class="row">
+              <button type="button"  id="0" class="col col-lg-2 number" name="0">0</button>
+              <button type="button"  id="dot" class="col col-lg-2 number" name="dot">.</button>
+              <button type="button"  id="sign" class="col col-lg-2 number" name="sign">±⇌</button>
+              <button type="button"  id="addX" class="col col-lg-2 function" name="addX" style="visibility: hidden;">+</button>
+              <button type="button"  id="equal" class="col col-lg-2 function" name="equal">=</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-12">
+        <div class="content" id="historyBody">
+          <div class="description" id="historyT">History</div>
+          <div id="historyLine"></div>
+        </div>
+      </div>
+    </div>
+
+    <div classs="container p-5">
+    	<div class="row no-gutters">
+    		<div class="col-lg-5 col-md-12">
+    			<div class="fixed-top alert alert-warning alert-dismissible fade show" role="alert">
+    				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <h4 class="alert-heading">Wen Hao's Calculator Version 1.0  <img src="images/calculator.png" alt="Calculator Icon" width="25px" style="vertical-align: top;"></h4>
+            <p>哈喽！在此先感谢你们点击链接，谢谢啦！(没有病毒放心) 由于这是第一个version罢了，所以其实你会注意到还是会有很多bug dok啦，你随随便便按可能就1+1=3了。我自己也是发现到了很多bug不过就是懒惰修了。所以在此声明请不要完全相信这个calculator给出的每一个答案啦。(不知道为什么有programmer是这样说的，可能他的技术不够好guo) 我也相信你们不会在考试时因为calculator没有电来用他的，因为实在太多bug！！ (如果有记得告诉我，我会很光荣的🙂)</p>
+            <p>此calculator是根据LS-88Hi III (calculation) 和AR-7778(music)来编程的。你可以拿出你家里阿爸阿妈算钱的calculator来比较，或是test用这个calculator来弹钢琴 (厉害不？😌) 。如果你发现了bug，又觉得有很多时间，你可以联系我哦！对对对，联系方式就在上面menu。</p>
+            <p>你的支持是我最大的鼓励！谢谢！</p>
+            <hr>
+            <p class="mb-0">Wen Hao's Calculator Version 1.0</p>
+            <p class="mb-0">Based on LS-88Hi III and AR-7778</p>
+            <p class="mb-0">© Lim Wen Hao 2021</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>
